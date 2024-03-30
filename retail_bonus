@@ -1,0 +1,30 @@
+# Monthly sales target
+monthly_target = 90000
+
+# Minimum sales required for store bonus
+min_sales_for_bonus = 100000
+
+
+store_bonus = 0
+day_off = False
+
+
+# Percentage of target sales required for a day off
+day_off_threshold = 1.25
+
+monthly_sales = float(input("Enter monthly sales: "))  # Get user input
+
+# Check for store bonus
+if monthly_sales >= min_sales_for_bonus:
+  store_bonus = 5000
+
+# Check for day off
+if monthly_sales >= monthly_target * day_off_threshold:
+  day_off = True
+
+print(f"Store Bonus: ${store_bonus:.2f}")
+
+if day_off:
+  print("Employees will get a day off!")
+else:
+  print("Employees will not get a day off this month.")

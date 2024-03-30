@@ -1,0 +1,70 @@
+import random
+lotto = input('Do you want to play. yes or no ? ').lower()
+if lotto == 'yes':
+    print(f'\n'
+        f'Tips for The Lottory Game👍 \n'
+        f'Guess from 1-10\n'
+        f'No❌ floating Number , No ❌strings, only integers✔')
+
+    list = []
+    for num in range(1,6):
+        Number = random.randint(1,10)
+        list.append(Number)
+
+    player_choice = int(input('Enter a Number from 1-10: '))
+    if player_choice in list:
+        print(f'congratulations You Have won the Lottery ✔😁\n '
+        f'The numbers  are {list}\n'
+        f'You have won an order')
+        order_choice = ['rice','Pizza' , 'drink']
+
+        orders = input('what will you like to order: , PIZZA, RICE, DRINK : ').lower()
+        name = input('Whats your name ? ')
+        location = input('We might need your adress for Delivery. whats your adress: ').capitalize()
+
+
+        while orders in order_choice:  
+
+            if orders == 'Pizza':                    
+                pizza_option = 'Vegetable ' 'or ' 'Animal '
+                pizza_choice = input(f'Which form Of pizza do you want {pizza_option}').capitalize()
+                print(f'Hello {name}\n'
+                    f"You ordered for Pizza with {pizza_choice} source. \n"
+                    f'It will be Delivered {location} in an Hour time. ')
+                continue
+            
+
+            elif orders == 'rice':
+                rice_option = 'Jollof, ' 'Fried  ' 'or ' 'Plain '
+                rice_choice = input(f"which form of Rice do you want {rice_option} ").capitalize()
+
+                print(f'Hello {name}\n'
+                    f"You ordered for {rice_choice} Rice \n"
+                    f'It will be Delivered at {location} in an Hour time. ')
+                continue
+                
+
+            elif orders == 'drink':
+                drink_option = 'Hennessy, ' 'cocacola, ''orijin' 
+                drink_choice = input(f"which form of drink do you want {drink_option} ").capitalize()
+
+                print(f'Hello {name}\n'
+                    f"Thanks you ordered for {drink_choice} \n"
+                    f'It will be Delivered at {location} in an Hour time. ')
+                continue
+                
+            else:
+                continue
+        else:
+            print(f"Hello {name}  We don't have your order in our options")
+            
+    else:
+        print(f'Sorry you Didnt Win This set\n'
+            f'The Numbers are {list}\n')
+
+    
+else:
+    print('We Hope To see you play another Time.😢')
+
+        
+
